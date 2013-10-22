@@ -1,0 +1,126 @@
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{hyperref}
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+\begin{document}
+
+\section{Project title}
+Proposed: ``Transferring large data quantities to MiG storage resources''
+
+\section{Problem statement}
+Is it possible to develop a system, that out-of-band\footnote{Out-of-band with 
+respect to the originating entity} synchronises data to a vgrid storage 
+resource from an external location, while satisfying the principles of Minimum 
+intrusion Grid?
+
+\section{Motivation}
+Why is this project interesting. Basically a more elaborate problem description
+
+When research data is recorded at a research station, it needs to be
+transferred to MiG. Today the data is mainly coming from neutron pictures
+captured in Switzerland and Germany, these images are in the terabyte 
+size-order. The main way of data transfer is by plane or train, stored on
+external hard-drives, and are then transferred ``locally'' to MiG.
+
+The manual transfer has several issues:
+\begin{itemize}
+\item Cost - 3TB by copper is virtually free, where as by plane can be quite
+    costly.
+\item Data corruption - It is hard to know, if a hard-drive corrupts data while 
+    travelling.
+\item Time - The process of transferring data from drive to PC to MiG, needs
+    supervision, thereby taking away time from other tasks.
+\end{itemize}
+
+The project shall concern developing a solution to resolve these issues, while
+still maintaining the principles of MiG\cite{cpa2005arch}. The below list 
+highlights some of the principles behind MiG:
+
+\begin{description}
+\item [Security] The current use of certificates, should provide the basis for
+    identity management and transport-layer security
+\item [Non-intrusive] The user should not be concerned with the actual
+    transferring of data
+\item[Fault tolerant] Data transfers are supposed to tolerate common problems
+    involved when working with the internet(Connection loss, High ping times,
+    etc.)
+\item[Scalable] The overall speed of the system should be dependent on data 
+    size, and possibly amount of transfers
+\end{description}
+
+\section{Learning goals}
+Measurable goals that should layout the framework for tasks.
+
+\begin{itemize}
+\item Integrate with current MiG infrastructure
+\item Reflect and demonstrate security concerns with respect to the complete
+    system
+\item Demonstrate correctness of the developed system
+\item Explain X.509 structure and principles, with respect to the current
+    use in MiG
+\item Understand and reason about the transferring of data between entities
+\end{itemize}
+
+\section{Project limits - not completed}
+The project will exclusively investigate a scenario wherein a  hardware-based
+entity, controlled by the MiG-core team, is empowered to upload on behalf of
+a user. Furthermore the project will not investigate its own data-transfer
+protocols, but exclusively consider existing means of data-transfer.
+
+\section{Tasks - 80\% done}
+The below specified tasks are a rough sketch of what parts the project
+involves, they are mainly concerned with the report. The development process is
+expected to be done in parallel with the relevant report sections, but with a
+hint of iterative development.
+
+\begin{description}
+\item[Task 0] Write synopsis
+\item[Milestone 0] Hand-in synopsis(\textbf{23/09/2013})
+\item[Task 1] Research, gather and read materials
+\item[Task 2] Write introductory sections about the problem area and eco-system
+    surrounding it
+\item[Task 3] Document work and decisions together with new discoveries
+\item[Milestone 1] Hand-in midway report(\textbf{18/11/2013})
+\item[Task 3 - continued]
+\item[Task 4] Write parts/sections about the actual implemented system
+\item[Task 5] Finalise report sections
+\item[Milestone 2] Hand-in final report(\textbf{10/01/2014})
+\end{description}
+
+
+\section{Below sections not done}
+
+\paragraph{Literature}
+Probably reference to some of the RFC' covering X.509, articles about MiG,
+something about transferring data, and more...
+
+
+\bibliographystyle{plain}
+\bibliography{literature}
+
+\end{document}
